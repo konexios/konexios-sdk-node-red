@@ -1,0 +1,48 @@
+<script type="text/javascript">
+    RED.nodes.registerType('arrow-connect-websocket',{
+        category: 'input',
+        color: '#dddddd',
+        defaults: {
+            name: {value:''},
+            url: {value:'', required: true},
+            device: {value:'', required: true},
+            telemetry: {value:'*', required: true}
+        },
+        credentials: {
+            apikey: {type: 'text'}
+        },
+        inputs: 0,
+        outputs: 1,
+        icon: "acn-websocket.png",
+        label: function() {
+            return this.name || "arrow-connect-websocket";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="arrow-connect-websocket">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="fa fa-cloud-download"></i> URL</label>
+        <input type="text" id="node-input-url" placeholder="ws://<host>:<port>">
+    </div>
+    <div class="form-row">
+        <label for="node-input-apikey"><i class="fa fa-key"></i> Api Key</label>
+        <input type="text" id="node-input-apikey">
+    </div>
+    <div class="form-row">
+        <label for="node-input-device"><i class="fa fa-tablet"></i> Device Hid</label>
+        <input type="text" id="node-input-device" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-telemetry"><i class="fa fa-table"></i> Telemetry</label>
+        <input type="text" id="node-input-telemetry" placeholder="">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="arrow-connect-websocket">
+    <p>A node consuming telemetry data from Arrow Connect cloud</p>
+</script>

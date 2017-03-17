@@ -1,0 +1,53 @@
+<script type="text/javascript">
+    RED.nodes.registerType('arrow-connect-mqtt',{
+        category: 'output',
+        color: '#dddddd',
+        defaults: {
+            name: {value:''},
+            url: {value:'', required: true},
+            prefix: {value:'/themis.dev', required: true},
+            gateway: {value:'', required: true},
+            device: {value:'', required: false}
+        },
+        credentials: {
+            apikey: {type: 'text'}
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "acn-mqtt.png",
+        label: function() {
+            return this.name || "arrow-connect-mqtt";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="arrow-connect-mqtt">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="fa fa-cloud-upload"></i> URL</label>
+        <input type="text" id="node-input-url" placeholder="mqtt://<host>:<port>">
+    </div>
+    <div class="form-row">
+        <label for="node-input-prefix"><i class="fa fa-user"></i> Prefix</label>
+        <input type="text" id="node-input-prefix">
+    </div>
+    <div class="form-row">
+        <label for="node-input-apikey"><i class="fa fa-key"></i> Api Key</label>
+        <input type="text" id="node-input-apikey">
+    </div>
+    <div class="form-row">
+        <label for="node-input-gateway"><i class="fa fa-file"></i> Gateway Hid</label>
+        <input type="text" id="node-input-gateway" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-device"><i class="fa fa-tablet"></i> Device Hid</label>
+        <input type="text" id="node-input-device" placeholder="">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="arrow-connect-mqtt">
+    <p>A node posting telemetry data to Arrow Connect cloud via MQTT</p>
+</script>
