@@ -128,7 +128,7 @@ module.exports = function(RED) {
         });
     }
 
-    RED.nodes.registerType('arrow-connect-mqtt', KronosMqttNode, {
+    RED.nodes.registerType('arrow-connect-mqtt', AcnMqttNode, {
         credentials: {
             apikey: {type: 'text'}
         }
